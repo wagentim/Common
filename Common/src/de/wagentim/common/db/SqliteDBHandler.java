@@ -8,14 +8,20 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SqliteDBHandler
 {
 	private Connection connection;
 	private Statement statement;
 	private ResultSet resultSet;
+	private Logger logger = LoggerFactory.getLogger(SqliteDBHandler.class);
 
 	public boolean openDB(String jdbc, String conn)
 	{
+		logger.info("Current jdbc is; {} and connection is: {}", jdbc, conn );
+		
 		try
 		{
 			Class.forName(jdbc);
@@ -36,6 +42,9 @@ public class SqliteDBHandler
 
 	public <T> T executeQuery(String sql, IResultSetExtractor<T> rse) throws SQLException, ClassNotFoundException
 	{
+		
+		logger.info("Query Statement: ", sql);
+		
 		try
 		{
 			resultSet = getStatement().executeQuery(sql);
@@ -50,6 +59,8 @@ public class SqliteDBHandler
 
 	public <T> List<T> executeQuery(String sql, IRowMapper<T> rm) throws SQLException, ClassNotFoundException
 	{
+		logger.info("Query Statement: ", sql);
+		
 		List<T> rsList = new ArrayList<T>();
 		try
 		{
@@ -68,6 +79,8 @@ public class SqliteDBHandler
 
 	public int executeUpdate(String sql) throws SQLException, ClassNotFoundException
 	{
+		logger.info("Update Statement: ", sql);
+		
 		try
 		{
 			int c = getStatement().executeUpdate(sql);
@@ -86,6 +99,7 @@ public class SqliteDBHandler
 		{
 			for (String sql : sqls)
 			{
+				logger.info("Update Statement: ", sql);
 				getStatement().executeUpdate(sql);
 			}
 		}
@@ -96,11 +110,12 @@ public class SqliteDBHandler
 	}
 
 	public void executeUpdate(List<String> sqls) throws SQLException, ClassNotFoundException
-	{
+	{	
 		try
 		{
 			for (String sql : sqls)
 			{
+				logger.info("Update Statement: ", sql);
 				getStatement().executeUpdate(sql);
 			}
 		}

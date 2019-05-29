@@ -43,7 +43,7 @@ public class SqliteDBHandler
 	public <T> T executeQuery(String sql, IResultSetExtractor<T> rse) throws SQLException, ClassNotFoundException
 	{
 		
-		logger.info("Query Statement: ", sql);
+		logger.info("Query Statement: {}", sql);
 		
 		try
 		{
@@ -59,7 +59,7 @@ public class SqliteDBHandler
 
 	public <T> List<T> executeQuery(String sql, IRowMapper<T> rm) throws SQLException, ClassNotFoundException
 	{
-		logger.info("Query Statement: ", sql);
+		logger.info("Query Statement: {}", sql);
 		
 		List<T> rsList = new ArrayList<T>();
 		try
@@ -79,7 +79,7 @@ public class SqliteDBHandler
 
 	public int executeUpdate(String sql) throws SQLException, ClassNotFoundException
 	{
-		logger.info("Update Statement: ", sql);
+		logger.info("Update Statement: {}", sql);
 		
 		try
 		{
@@ -99,7 +99,7 @@ public class SqliteDBHandler
 		{
 			for (String sql : sqls)
 			{
-				logger.info("Update Statement: ", sql);
+				logger.info("Update Statement: {}", sql);
 				getStatement().executeUpdate(sql);
 			}
 		}
@@ -115,7 +115,7 @@ public class SqliteDBHandler
 		{
 			for (String sql : sqls)
 			{
-				logger.info("Update Statement: ", sql);
+				logger.info("Update Statement: {}", sql);
 				getStatement().executeUpdate(sql);
 			}
 		}

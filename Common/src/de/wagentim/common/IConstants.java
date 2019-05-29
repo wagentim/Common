@@ -36,8 +36,8 @@ public interface IConstants
 	public static final String TXT_LABEL_EXEC_DIRECTORY = "Directory: ";
 	public static final String TXT_BTN_SELECT = "Select";
 	public static final String TXT_BTN_RUN = "Run";
-	public static final String TXT_BTN_ADD = "Add";
-	public static final String TXT_BTN_DELETE = "Delete";
+	public static final String TXT_ADD = "Add";
+	public static final String TXT_DELETE = "Delete";
 	public static final String TXT_BTN_SAVE = "Output";
 	public static final String TXT_PM_NUMBER = "PM_NUMBER";
 	public static final String TXT_BTN_CONNECT = "Connect";

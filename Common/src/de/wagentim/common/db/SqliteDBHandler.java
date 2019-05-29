@@ -20,7 +20,7 @@ public class SqliteDBHandler
 
 	public boolean openDB(String jdbc, String conn)
 	{
-		logger.info("Current jdbc is; {} and connection is: {}", jdbc, conn );
+		logger.info("Current jdbc is: {} and connection is: {}", jdbc, conn );
 		
 		try
 		{

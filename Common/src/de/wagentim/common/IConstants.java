@@ -74,7 +74,6 @@ public interface IConstants
 	public static final int ACTION_BLOCK_SELECTED = 0x15;
 	public static final int ACTION_LOCK_SELECTION_CHANGED = 0x16;
 	public static final int ACTION_DROP_NEW_FILE_SELECTED = 0x18;
-	public static final int ACTION_ADD_NEW_BLOCK = 0x04;
 	public static final int ACTION_DELETE_BLOCK = 0x05;
 	public static final int ACTION_LOG_WRITE_WARNING = 0x07;
 	public static final int ACTION_MENU_ADD = 0x09;

@@ -30,7 +30,7 @@ public abstract class AbstractActionManager implements IActionManager
 		}
 	}
 	
-	public void sendAction(final int type, final Object content)
+	public synchronized void sendAction(final int type, final Object content)
 	{
 		if( !listenerList.isEmpty() )
 		{

@@ -3,13 +3,11 @@ package de.wagentim.common.ui;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.events.MenuAdapter;
 import org.eclipse.swt.events.MenuEvent;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
@@ -22,7 +20,6 @@ import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 
 import de.wagentim.common.IConstants;
@@ -170,33 +167,43 @@ public class TableComposite extends CommonAbstractComposite
 	}
 
 
-//	public void updateParameters(List<RecordItem> items)
-//	{
-//		clearTable();
-//
-//		if( null == table || null == items || items.isEmpty() )
-//		{
-//			return;
-//		}
-//		
-//		Iterator<RecordItem> it = items.iterator();
-//		
-//		while(it.hasNext())
-//		{
-//			addTableItem(it.next());
-//		}
-//		
-//		resize();
-//	}
-//	
-//	private void addTableItem(RecordItem item)
-//	{
-//		TableItem ti = new TableItem(table, SWT.NONE);
-//		ti.setText(0, item.getKey());
-//		ti.setText(1, item.getValue());
-//		ti.setData(item);
-//		ti.setBackground(tableBackgroudColor);
-//	}
+	public void createRow(List<String> items)
+	{
+		clearTable();
+
+		if( null == table || null == items || items.isEmpty() )
+		{
+			return;
+		}
+		
+		Iterator<String> it = items.iterator();
+		
+		while(it.hasNext())
+		{
+			addTableItem(it.next());
+		}
+		
+		resize();
+	}
+	
+	private void addTableItem(String item)
+	{
+		StringTokenizer st = new StringTokenizer(item, " ");
+		String key = st.nextToken();
+		
+		if (!st.hasMoreTokens())
+		{
+			return;
+		}
+		
+		String value = st.nextToken();
+		
+		TableItem ti = new TableItem(table, SWT.NONE);
+		ti.setText(0, key);
+		ti.setText(1, value);
+		ti.setData(item);
+		ti.setBackground(tableBackgroudColor);
+	}
 	
 	public void resize()
 	{

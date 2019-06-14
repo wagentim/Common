@@ -11,4 +11,6 @@ public interface IShellContentHandler
 	void processError(List<String> sb_error);
 
 	String getShellFile();
+
+	void finish();
 }

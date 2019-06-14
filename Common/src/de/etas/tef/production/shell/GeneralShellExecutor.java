@@ -11,19 +11,17 @@ import org.slf4j.LoggerFactory;
 
 public class GeneralShellExecutor implements IShellExecutor
 {
-	private final IShellContentHandler handler;
 	private static final Logger logger = LoggerFactory.getLogger(GeneralShellExecutor.class);
 	private final List<String> content;
 	private final List<String> error;
 	
-	public GeneralShellExecutor(final IShellContentHandler handler)
+	public GeneralShellExecutor()
 	{
-		this.handler = handler;
 		content = new ArrayList<String>();
 		error = new ArrayList<String>();
 	}
 	
-	public void exec()
+	public void exec(IShellContentHandler handler)
 	{
 		String file = getClass().getClassLoader().getResource(handler.getShellFile()).getFile().substring(1);
 		
@@ -43,7 +41,9 @@ public class GeneralShellExecutor implements IShellExecutor
 					shellProcess.getInputStream(), "utf-8"));
 			while ((line = stdout.readLine()) != null)
 			{
-				content.add(line);
+				
+				if(line != null && !line.isEmpty())
+					content.add(line);
 			}
 			stdout.close();
 
@@ -52,13 +52,15 @@ public class GeneralShellExecutor implements IShellExecutor
 			
 			while ((line = stderr.readLine()) != null)
 			{
-				error.add(line);
+				if(line != null && !line.isEmpty())
+					error.add(line);
 			}
 			
 			stderr.close();
 			
 			handler.processContent(content);
 			handler.processError(error);
+			handler.finish();
 			
 		} catch (IOException e)
 		{

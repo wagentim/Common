@@ -7,6 +7,7 @@ public interface IConstants
 	
 	public static final String CONFIG_DEFAULT_LOCATION = ".";
 	public static final String CONFIG_DEFAULT_NAME = "";
+	public static final String COMPOSITE_ID = "id";
 	
 	public static final int EMPTY_INT = -1;
 	public static final String[] EMPTY_STRING_ARRAY = {};

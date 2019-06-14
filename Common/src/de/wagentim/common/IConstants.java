@@ -54,6 +54,7 @@ public interface IConstants
 	public static final String TXT_COPY = "Copy";
 	public static final String TXT_PASTE = "Paste";
 	public static final String TXT_FOLDER_PASSWORD_PROTECTOR = "Password";
+	public static final String TXT_FOLDER_SYSTEM = "System";
 	public static final String TXT_RECORD = "Records";
 	public static final String TXT_APP = "Home App (Version 1.0)";
 	

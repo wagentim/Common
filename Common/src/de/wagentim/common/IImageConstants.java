@@ -23,4 +23,6 @@ public interface IImageConstants
 	public static final Integer IMAGE_LOAD_COLOR = 0x12;
 	public static final Integer IMAGE_HOME = 0x13;
 	public static final int IMAGE_OPEN = 0x14;
+	public static final int IMAGE_SETTING = 0x15;
+	public static final int IMAGE_FOLDER = 0x16;
 }

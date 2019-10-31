@@ -22,4 +22,5 @@ public interface IImageConstants
 	public static final int IMAGE_EDITABLE_COLOR = 0x11;
 	public static final Integer IMAGE_LOAD_COLOR = 0x12;
 	public static final Integer IMAGE_HOME = 0x13;
+	public static final int IMAGE_OPEN = 0x14;
 }

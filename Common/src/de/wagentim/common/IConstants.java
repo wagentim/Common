@@ -2,7 +2,7 @@ package de.wagentim.common;
 
 public interface IConstants
 {
-	public static final int MAIN_SCREEN_WIDTH = 800;
+	public static final int MAIN_SCREEN_WIDTH = 900;
 	public static final int MAIN_SCREEN_HEIGHT = 700;
 	
 	public static final String CONFIG_DEFAULT_LOCATION = ".";
@@ -29,6 +29,8 @@ public interface IConstants
 	
 	public static final String[] CONFIG_FILE_EXTENSION = {"*.ini", "*.*"};
 	public static final String[] CONFIG_FILE_NAME = {"Config File (*.ini)", "All Files (*.*)"};
+	public static final String[] ALL_FILE_EXTENSION = {"*.*"};
+	public static final String[] ALL_FILE_NAME = {"All Files (*.*)"};
 	
 	public static final String TXT_APP_TITLE = "Config File Editor";
 	public static final String TXT_LABEL_FILE = "File";
@@ -56,8 +58,9 @@ public interface IConstants
 	public static final String TXT_PASTE = "Paste";
 	public static final String TXT_FOLDER_PASSWORD_PROTECTOR = "Password";
 	public static final String TXT_FOLDER_SYSTEM = "System";
+	public static final String TXT_FOLDER_SFTP = "SFTP (Data Exchange)";
 	public static final String TXT_RECORD = "Records";
-	public static final String TXT_APP = "Home App (Version 1.0)";
+	public static final String TXT_APP = "Working Tools (Version 1.0)";
 	
 	public static final int ACTION_NEW_FILE_SELECTED = 0x00;
 	public static final int ACTION_LOG_WRITE_INFO = 0x01;
@@ -92,4 +95,5 @@ public interface IConstants
 	public static final int FOCUS_NONE = 0x00;
 	public static final int FOCUS_BLOCK = 0x01;
 	public static final int FOCUS_PARAMETER = 0x02;
+	public static final String TXT_OPEN = "Open";
 }

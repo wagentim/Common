@@ -40,6 +40,7 @@ public class ImageRegister
 		mapper.put(IImageConstants.IMAGE_EDITABLE_OUTLINE, createImage("icons/editable_outline.png"));
 		mapper.put(IImageConstants.IMAGE_EDITABLE_COLOR, createImage("icons/editable_color.png"));
 		mapper.put(IImageConstants.IMAGE_HOME, createImage("icons/home.png"));
+		mapper.put(IImageConstants.IMAGE_OPEN, createImage("icons/open.png"));
 		
 	}
 	

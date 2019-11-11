@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.TreeItem;
 
-import de.wagentim.common.IConstants;
+import de.etas.tef.app.IGlobalConstants;
 
 public abstract class CellEditingListener implements MouseListener, KeyListener, SelectionListener
 {
@@ -28,8 +28,8 @@ public abstract class CellEditingListener implements MouseListener, KeyListener,
 	protected final ITableController controller;
 
 	protected ControlEditor editor = null;
-	protected String newValue = IConstants.EMPTY_STRING;
-	protected String oldValue = IConstants.EMPTY_STRING;
+	protected String newValue = IGlobalConstants.EMPTY_STRING;
+	protected String oldValue = IGlobalConstants.EMPTY_STRING;
 	
 	public CellEditingListener(Composite composite, ITableController controller)
 	{
@@ -142,7 +142,7 @@ public abstract class CellEditingListener implements MouseListener, KeyListener,
 				}
 				else if(event.keyCode == SWT.ESC)
 				{
-					newValue = IConstants.EMPTY_STRING;
+					newValue = IGlobalConstants.EMPTY_STRING;
 					disposeEditor();
 				}
 			}

@@ -2,7 +2,7 @@ package de.wagentim.common.ui;
 
 import org.eclipse.swt.widgets.Composite;
 
-import de.wagentim.common.IActionListener;
+import de.etas.tef.app.IActionListener;
 import de.wagentim.common.ImageRegister;
 
 public abstract class CommonAbstractComposite extends Composite implements IActionListener

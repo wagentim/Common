@@ -1,16 +1,28 @@
-package de.wagentim.common;
+package de.etas.tef.app;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.wagentim.common.IActionListener;
-
-public abstract class AbstractActionManager implements IActionManager
+/**
+ * Event Dispatcher. {@link IActionListener} must register itself here for Event notification.
+ * 
+ * Singleton Pattern
+ * 
+ * @author UIH9FE
+ *
+ */
+public class ActionManager
 {
+	public static ActionManager INSTANCE = new ActionManager();
 	private List<IActionListener> listenerList = null;
 	
-	public AbstractActionManager()
+	public ActionManager()
 	{
+		if(null == INSTANCE)
+		{
+			INSTANCE = new ActionManager();
+		}
+		
 		listenerList = new ArrayList<IActionListener>();
 	}
 	
@@ -30,7 +42,7 @@ public abstract class AbstractActionManager implements IActionManager
 		}
 	}
 	
-	public synchronized void sendAction(final int type, final Object content)
+	public void sendAction(final int type, final Object content)
 	{
 		if( !listenerList.isEmpty() )
 		{

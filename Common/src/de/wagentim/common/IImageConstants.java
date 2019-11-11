@@ -25,4 +25,5 @@ public interface IImageConstants
 	public static final int IMAGE_OPEN = 0x14;
 	public static final int IMAGE_SETTING = 0x15;
 	public static final int IMAGE_FOLDER = 0x16;
+	public static final int IMAGE_ETAS = 0x17;
 }

@@ -6,6 +6,8 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import de.etas.tef.app.IGlobalConstants;
+
 
 public final class Validator
 {
@@ -29,7 +31,7 @@ public final class Validator
 			return false;
 		}
 		
-		Path path = Paths.get(filePath, IConstants.EMPTY_STRING_ARRAY);
+		Path path = Paths.get(filePath, IGlobalConstants.EMPTY_STRING_ARRAY);
 		LinkOption[] options = {LinkOption.NOFOLLOW_LINKS};
 		
 		if(Files.notExists(path, options) && createNewFile)

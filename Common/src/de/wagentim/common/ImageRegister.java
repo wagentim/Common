@@ -43,6 +43,7 @@ public class ImageRegister
 		mapper.put(IImageConstants.IMAGE_OPEN, createImage("icons/open.png"));
 		mapper.put(IImageConstants.IMAGE_SETTING, createImage("icons/setting.png"));
 		mapper.put(IImageConstants.IMAGE_FOLDER, createImage("icons/folder.png"));
+		mapper.put(IImageConstants.IMAGE_ETAS, createImage("icons/etas.png"));
 		
 	}
 	

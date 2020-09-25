@@ -1,4 +1,4 @@
-package de.wagentim.common.db;
+package de.wagentim.common.db.sqlite;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

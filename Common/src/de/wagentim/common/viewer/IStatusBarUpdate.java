@@ -1,4 +1,4 @@
-package de.wagentim.common.ui;
+package de.wagentim.common.viewer;
 
 public interface IStatusBarUpdate
 {

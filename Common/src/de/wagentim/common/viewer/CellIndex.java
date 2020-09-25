@@ -1,4 +1,4 @@
-package de.wagentim.common.ui;
+package de.wagentim.common.viewer;
 
 /**
  * Just for identify the table cell location

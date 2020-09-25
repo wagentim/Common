@@ -1,4 +1,4 @@
-package de.wagentim.common.ui;
+package de.wagentim.common.viewer;
 
 import org.eclipse.swt.widgets.Composite;
 

@@ -1,4 +1,4 @@
-package de.wagentim.common.ui;
+package de.wagentim.common.viewer;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ControlEditor;
